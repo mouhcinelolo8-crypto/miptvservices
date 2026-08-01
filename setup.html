@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV Setup Guide for Smart TV, Firestick, Apple TV & PC | miptvservices</title>
+  <meta name="description" content="Easy 3-minute IPTV setup guide for Samsung & LG Smart TVs, Firestick, Apple TV, Android & PC. Follow our step-by-step instructions for IPTV Smarters Pro & TiviMate.">
+  <meta name="keywords" content="IPTV setup guide, install IPTV Smart TV, Firestick IPTV setup, IPTV Smarters setup, TiviMate setup, IPTV tutorial, miptvservices setup">
+  <link rel="canonical" href="https://miptvservices.com/setup.html">
+  
+  <!-- OpenGraph & Twitter Social Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IPTV Setup Guide for Smart TV, Firestick, Apple TV & PC | miptvservices">
+  <meta property="og:description" content="Step-by-step 3-minute setup instructions for IPTV Smarters Pro, IBO Player & TiviMate on all devices.">
+  <meta property="og:url" content="https://miptvservices.com/setup.html">
+  <meta property="og:site_name" content="miptvservices">
+  <meta property="og:image" content="https://miptvservices.com/assets/images/devices_showcase.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IPTV Setup Guide for Smart TV, Firestick & Apple TV | miptvservices">
+  <meta name="twitter:description" content="Easy 3-step installation guides for IPTV Smarters & TiviMate player apps.">
+  <meta name="twitter:image" content="https://miptvservices.com/assets/images/devices_showcase.jpg">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "How to Setup 4K IPTV on Smart TV, Firestick, Apple TV & PC",
+    "description": "Step-by-step technical guide for configuring IPTV M3U playlist & Xtream API on all streaming devices.",
+    "author": {
+      "@type": "Organization",
+      "name": "miptvservices"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "miptvservices",
+      "logo": "https://miptvservices.com/assets/images/hero_tv_mockup.jpg"
+    },
+    "mainEntityOfPage": "https://miptvservices.com/setup.html"
+  }
+  </script>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#080b13',
+            brandBlue: '#3b82f6',
+            brandEmerald: '#10b981',
+            brandGold: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#080b13] text-slate-100 relative min-h-screen font-sans bg-grid-pattern">
+
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 p-0.5 shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+            <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+              <svg class="w-5 h-5 text-blue-400 fill-current" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+          <span class="text-2xl font-black tracking-tight text-white">
+            miptv<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">services</span>
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-300">
+          <a href="index.html" class="hover:text-blue-400 transition-colors">Home</a>
+          <a href="channels.html" class="hover:text-blue-400 transition-colors">Channels</a>
+          <a href="pricing.html" class="hover:text-blue-400 transition-colors">Pricing</a>
+          <a href="setup.html" class="text-blue-400 font-bold border-b-2 border-blue-400 pb-1">Setup</a>
+          <a href="features.html" class="hover:text-blue-400 transition-colors">Features</a>
+          <a href="reviews.html" class="hover:text-blue-400 transition-colors">Reviews</a>
+          <a href="blog.html" class="hover:text-blue-400 transition-colors">Blog</a>
+          <a href="faq.html" class="hover:text-blue-400 transition-colors">FAQ</a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <button onclick="triggerOrderWhatsApp('12 Months Pass', '$59.99')" class="btn-neon-whatsapp text-white font-bold text-xs px-5 py-2.5 rounded-xl flex items-center gap-2">
+            <span>Order via WhatsApp</span>
+          </button>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 p-5 space-y-4 text-sm font-medium">
+      <a href="index.html" class="block text-slate-200 hover:text-blue-400">Home</a>
+      <a href="channels.html" class="block text-slate-200 hover:text-blue-400">Channels</a>
+      <a href="pricing.html" class="block text-slate-200 hover:text-blue-400">Pricing</a>
+      <a href="setup.html" class="block text-blue-400 font-bold">Setup</a>
+      <a href="features.html" class="block text-slate-200 hover:text-blue-400">Features</a>
+      <a href="reviews.html" class="block text-slate-200 hover:text-blue-400">Reviews</a>
+      <a href="blog.html" class="block text-slate-200 hover:text-blue-400">Blog</a>
+      <a href="faq.html" class="block text-slate-200 hover:text-blue-400">FAQ</a>
+    </div>
+  </header>
+
+  <!-- Device Compatibility Section -->
+  <section class="py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+          <span>📱 Simple 3-Minute Installation</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight">Step-by-Step Device Setup Guide</h1>
+        <p class="text-slate-400 text-base">Select your device below for tailored installation instructions.</p>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5">
+          <img src="assets/images/devices_showcase.jpg" alt="miptvservices Devices" class="rounded-3xl shadow-2xl border border-slate-800 object-cover w-full h-auto">
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="flex flex-wrap gap-2 text-xs font-semibold">
+            <button data-target="setup-smarttv" class="setup-tab-btn px-4 py-2.5 rounded-xl bg-blue-600 text-white shadow-lg shadow-blue-500/30 transition-all">Smart TV (Samsung/LG)</button>
+            <button data-target="setup-firestick" class="setup-tab-btn px-4 py-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-white transition-all">FireStick / Android TV</button>
+            <button data-target="setup-apple" class="setup-tab-btn px-4 py-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-white transition-all">Apple TV / iOS</button>
+            <button data-target="setup-pc" class="setup-tab-btn px-4 py-2.5 rounded-xl bg-slate-800/50 text-slate-400 hover:text-white transition-all">Windows / Mac</button>
+          </div>
+
+          <div id="setup-smarttv" class="setup-content space-y-4 glass-panel rounded-3xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center shrink-0">1</div>
+              <div>
+                <h4 class="font-bold text-white text-base">1. Install IPTV Player App</h4>
+                <p class="text-slate-400 text-xs mt-1">Download IPTV Smarters Pro, IBO Player, or Smartone TV from your Samsung or LG TV App Store.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center shrink-0">2</div>
+              <div>
+                <h4 class="font-bold text-white text-base">2. Enter Xtream Credentials</h4>
+                <p class="text-slate-400 text-xs mt-1">Input the Xtream API details or M3U playlist link sent to your WhatsApp.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center shrink-0">3</div>
+              <div>
+                <h4 class="font-bold text-white text-base">3. Start Watching in 4K</h4>
+                <p class="text-slate-400 text-xs mt-1">Enjoy live sports, movies, and series instantly in 4K Ultra HD!</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="setup-firestick" class="setup-content hidden space-y-4 glass-panel rounded-3xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center shrink-0">1</div>
+              <div>
+                <h4 class="font-bold text-white text-base">1. Download Downloader App</h4>
+                <p class="text-slate-400 text-xs mt-1">Open Amazon Appstore and search for "Downloader".</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center shrink-0">2</div>
+              <div>
+                <h4 class="font-bold text-white text-base">2. Install IPTV Smarters / TiviMate</h4>
+                <p class="text-slate-400 text-xs mt-1">Enter our short URL into Downloader to install the recommended 4K player app.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center shrink-0">3</div>
+              <div>
+                <h4 class="font-bold text-white text-base">3. Log In & Enjoy</h4>
+                <p class="text-slate-400 text-xs mt-1">Sign in with your Xtream API credentials provided by our WhatsApp support team.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="setup-apple" class="setup-content hidden space-y-4 glass-panel rounded-3xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center shrink-0">1</div>
+              <div>
+                <h4 class="font-bold text-white text-base">1. Open App Store</h4>
+                <p class="text-slate-400 text-xs mt-1">Search for "Smarters Player Lite" or "GSE Smart IPTV".</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center shrink-0">2</div>
+              <div>
+                <h4 class="font-bold text-white text-base">2. Add Login Details</h4>
+                <p class="text-slate-400 text-xs mt-1">Log in using your account details to load 51,918+ items.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="setup-pc" class="setup-content hidden space-y-4 glass-panel rounded-3xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center shrink-0">1</div>
+              <div>
+                <h4 class="font-bold text-white text-base">1. Download VLC / IPTV Smarters Desktop</h4>
+                <p class="text-slate-400 text-xs mt-1">Install VLC Media Player or IPTV Smarters for Windows/Mac.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 pt-3 border-t border-slate-800">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center shrink-0">2</div>
+              <div>
+                <h4 class="font-bold text-white text-base">2. Open Network Stream</h4>
+                <p class="text-slate-400 text-xs mt-1">Paste your M3U playlist link to launch your live channel playlist immediately.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 relative z-10 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500">
+        <p>© 2026 miptvservices. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="index.html" class="hover:text-white">Home</a>
+          <a href="pricing.html" class="hover:text-white">Pricing</a>
+          <a href="channels.html" class="hover:text-white">Channels</a>
+          <a href="faq.html" class="hover:text-white">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget & Modal -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <button onclick="triggerOrderWhatsApp('12 Months Pass', '$59.99')" class="pulse-ring btn-neon-whatsapp w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.305-1.131z"/></svg>
+    </button>
+  </div>
+
+  <div id="whatsapp-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
+    <div class="glass-panel max-w-md w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-500/40 relative shadow-2xl">
+      <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <div class="space-y-2">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl">💬</div>
+        <h3 class="text-xl font-black text-white">Order / Support via WhatsApp</h3>
+        <p class="text-xs text-emerald-400 font-semibold">Direct Line: +44 7476 941777</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-xs space-y-1">
+        <span class="text-slate-400">Selected Subscription Plan:</span>
+        <div id="modal-plan-title" class="text-sm font-bold text-emerald-400">12 Months Pass ($59.99)</div>
+      </div>
+      <div>
+        <textarea id="modal-user-note" rows="3" placeholder="Example: Smart TV Samsung..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+      </div>
+      <button id="modal-send-whatsapp" class="w-full btn-neon-whatsapp py-3.5 px-4 rounded-xl text-white font-bold text-xs shadow-lg">
+        Open WhatsApp Chat Now 💬
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/js/channels_data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
