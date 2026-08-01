@@ -37,15 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const pData = connectionPrices[count] || connectionPrices[1];
 
     // Update Price Tags
-    const p1 = document.getElementById('price-val-1');
-    const p3 = document.getElementById('price-val-3');
-    const p6 = document.getElementById('price-val-6');
-    const p12 = document.getElementById('price-val-12');
-
-    if (p1) p1.textContent = `$${pData.p1}`;
-    if (p3) p3.textContent = `$${pData.p3}`;
-    if (p6) p6.textContent = `$${pData.p6}`;
-    if (p12) p12.textContent = `$${pData.p12}`;
+    document.getElementById('price-val-1').textContent = `$${pData.p1}`;
+    document.getElementById('price-val-3').textContent = `$${pData.p3}`;
+    document.getElementById('price-val-6').textContent = `$${pData.p6}`;
+    document.getElementById('price-val-12').textContent = `$${pData.p12}`;
 
     // Update Feature Connection Count text
     document.querySelectorAll('.conn-count-feature').forEach(el => {
@@ -123,8 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'glass-panel glass-panel-hover rounded-2xl p-4 flex items-center justify-between transition-all';
       
-      const logoHtml = (ch.i && ch.i.startsWith('http'))
-        ? `<img src="${ch.i}" alt="${ch.n}" class="w-10 h-10 object-contain rounded-lg" onerror="this.onerror=null; this.outerHTML='<div class=\'w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-xl\'>📺</div>';">`
+      let imgSrc = ch.i || '';
+      if (imgSrc.startsWith('http://') && window.location.protocol === 'https:') {
+        imgSrc = imgSrc.replace('http://', 'https://');
+      }
+
+      const logoHtml = (imgSrc && (imgSrc.startsWith('http') || imgSrc.startsWith('assets/')))
+        ? `<img src="${imgSrc}" alt="${ch.n}" class="w-10 h-10 object-contain rounded-lg bg-slate-900/50 p-0.5 border border-slate-800" onerror="this.onerror=null; this.outerHTML='<div class=\\'w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-xl shadow-inner\\'>📺</div>';">`
         : `<div class="w-10 h-10 rounded-lg bg-slate-800/80 border border-slate-700/50 flex items-center justify-center text-xl shadow-inner">📺</div>`;
 
       card.innerHTML = `
