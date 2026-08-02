@@ -5,6 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
   let selectedPlan = '12 Months Pass';
   let selectedPrice = '$59.99';
   let displayLimit = 36;
+  let realChannelsData = [];
+
+  // Background fetch full catalog without blocking page rendering
+  function fetchChannelsCatalog() {
+    if (realChannelsData.length > 0) return;
+    fetch('assets/js/channels_data.json')
+      .then(res => res.json())
+      .then(data => {
+        realChannelsData = data;
+        const activeTab = document.querySelector('.channel-tab-btn.active');
+        const cat = activeTab ? activeTab.getAttribute('data-cat') : 'all';
+        const searchInput = document.getElementById('channel-search-input');
+        renderChannels(cat, searchInput ? searchInput.value : '', true);
+      })
+      .catch(() => { /* Fallback to sample channels */ });
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(fetchChannelsCatalog, { timeout: 3000 });
+  } else {
+    setTimeout(fetchChannelsCatalog, 1500);
+  }
 
   // Multi-User Connections Pricing Matrix (USD $)
   const connectionPrices = {
@@ -181,6 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const searchInput = document.getElementById('channel-search-input');
   if (searchInput) {
+    searchInput.addEventListener('focus', fetchChannelsCatalog);
     let debounceTimer;
     searchInput.addEventListener('input', (e) => {
       clearTimeout(debounceTimer);
@@ -298,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const extra = userNote ? `%0A%0ARequest: ${encodeURIComponent(userNote)}` : '';
       const waUrl = `https://wa.me/447476941777?text=${encodeURIComponent(greeting)}${extra}`;
       
-      window.open(waUrl, '_blank');
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
       if (whatsappModal) whatsappModal.classList.add('hidden');
     });
   }
