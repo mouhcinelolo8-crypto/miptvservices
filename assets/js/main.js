@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const extra = userNote ? `%0A%0ARequest: ${encodeURIComponent(userNote)}` : '';
       const waUrl = `https://wa.me/447476941777?text=${encodeURIComponent(greeting)}${extra}`;
       
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      window.open(waUrl, '_blank');
       if (whatsappModal) whatsappModal.classList.add('hidden');
     });
   }
