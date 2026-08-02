@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brandDark: #080b13;
+  --color-brandBlue: #3b82f6;
+  --color-brandEmerald: #10b981;
+  --color-brandGold: #f59e0b;
+}
+
+@import "./style.css";
