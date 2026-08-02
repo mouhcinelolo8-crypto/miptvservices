@@ -14,11 +14,11 @@
   <meta property="og:description" content="Search 21,314+ live TV channels and 30,604+ movies on demand in 4K UHD. Instant search filter for sports, cinema, news & kids.">
   <meta property="og:url" content="https://miptvservices.com/channels.html">
   <meta property="og:site_name" content="miptvservices">
-  <meta property="og:image" content="https://miptvservices.com/assets/images/vod_showcase.jpg">
+  <meta property="og:image" content="https://miptvservices.com/assets/images/vod_showcase.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="51,918+ Live IPTV Channels & 4K VOD Movies List 2026 | miptvservices">
   <meta name="twitter:description" content="Search live sports & 4K movies across our 51,918+ IPTV package database.">
-  <meta name="twitter:image" content="https://miptvservices.com/assets/images/vod_showcase.jpg">
+  <meta name="twitter:image" content="https://miptvservices.com/assets/images/vod_showcase.webp">
 
   <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -32,39 +32,37 @@
   }
   </script>
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#080b13',
-            brandBlue: '#3b82f6',
-            brandEmerald: '#10b981',
-            brandGold: '#f59e0b'
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Production Optimized Tailwind CSS -->
+  <link rel="stylesheet" href="assets/css/tailwind.min.css">
+
   <!-- Favicon & Browser Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <!-- Crisp Live Chat -->
+  <!-- Crisp Live Chat (Deferred Load) -->
   <script type="text/javascript">
     window.$crisp=[];
     window.CRISP_WEBSITE_ID="92f7591c-281b-49ff-9ea1-24ddeb4e493a";
     (function(){
-      d=document;
-      s=d.createElement("script");
-      s.src="https://client.crisp.chat/l.js";
-      s.async=1;
-      d.getElementsByTagName("head")[0].appendChild(s);
+      var loaded = false;
+      function loadCrisp() {
+        if (loaded) return;
+        loaded = true;
+        var d = document, s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      }
+      ['mousemove', 'touchstart', 'scroll', 'keydown', 'click'].forEach(function(e) {
+        window.addEventListener(e, loadCrisp, {once: true, passive: true});
+      });
+      setTimeout(loadCrisp, 4000);
     })();
   </script>
 </head>
@@ -108,7 +106,7 @@
           </button>
         </div>
 
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
+        <button id="mobile-menu-btn" aria-label="Toggle Mobile Navigation Menu" class="md:hidden p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
           </svg>
@@ -145,7 +143,7 @@
         
         <!-- Search Bar -->
         <div class="max-w-2xl mx-auto relative">
-          <input type="text" id="channel-search-input" placeholder="Search channel or movie (e.g. Canal+, BeIN, TF1, DAZN, Sky Sports, Spider-Man)..." class="w-full glass-panel rounded-2xl px-6 py-4 pl-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-all shadow-inner">
+          <input type="text" id="channel-search-input" aria-label="Search channels and movies" placeholder="Search channel or movie (e.g. Canal+, BeIN, TF1, DAZN, Sky Sports, Spider-Man)..." class="w-full glass-panel rounded-2xl px-6 py-4 pl-12 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-all shadow-inner">
           <svg class="w-5 h-5 text-slate-400 absolute left-4 top-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
@@ -189,7 +187,7 @@
 
   <!-- WhatsApp Widget & Modal -->
   <div class="fixed bottom-6 left-6 z-50">
-    <button onclick="triggerOrderWhatsApp('12 Months Pass', '$59.99')" class="pulse-ring btn-neon-whatsapp w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform">
+    <button onclick="triggerOrderWhatsApp('12 Months Pass', '$59.99')" aria-label="Contact Support on WhatsApp" class="pulse-ring btn-neon-whatsapp w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform">
       <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.157 4.228 4.305-1.131z"/>
       </svg>
@@ -198,7 +196,7 @@
 
   <div id="whatsapp-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
     <div class="glass-panel max-w-md w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-500/40 relative shadow-2xl">
-      <button id="close-modal-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+      <button id="close-modal-btn" aria-label="Close Order Modal" class="absolute top-4 right-4 text-slate-400 hover:text-white">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
       <div class="space-y-2">
@@ -211,8 +209,8 @@
         <div id="modal-plan-title" class="text-sm font-bold text-emerald-400">12 Months Pass ($59.99)</div>
       </div>
       <div>
-        <label class="block text-xs font-semibold text-slate-300 mb-1">Add any special request (e.g. app preference)...</label>
-        <textarea id="modal-user-note" rows="3" placeholder="Example: Smart TV Samsung / IPTV Smarters..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+        <label for="modal-user-note" class="block text-xs font-semibold text-slate-300 mb-1">Add any special request (e.g. app preference)...</label>
+        <textarea id="modal-user-note" aria-label="Special request or device information" rows="3" placeholder="Example: Smart TV Samsung / IPTV Smarters..." class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
       </div>
       <button id="modal-send-whatsapp" class="w-full btn-neon-whatsapp py-3.5 px-4 rounded-xl text-white font-bold text-xs shadow-lg">
         Open WhatsApp Chat Now 💬
@@ -220,7 +218,6 @@
     </div>
   </div>
 
-  <script src="assets/js/channels_data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
